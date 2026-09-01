@@ -77,8 +77,8 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--ember); outline
 .emblem-showcase > div { display: grid; max-width: 255px; }
 .emblem-showcase strong { font-size: var(--text-lg); font-weight: 500; }
 .emblem-showcase span { margin-top: 5px; color: var(--muted); font-size: var(--text-sm); }
-.paper-card { position: relative; z-index: 1; width: 100%; overflow: hidden; margin: 0; padding: 14px; }
-.paper-card > img { display: block; width: 100%; height: auto; aspect-ratio: 1509 / 742; object-fit: contain; object-position: center; background: #fff; border-radius: 10px; }
+.paper-card { position: relative; z-index: 1; width: 100%; overflow: visible; margin: 0; padding: 14px; }
+.paper-card > img { display: block; width: 100%; height: auto; max-height: none; object-fit: contain; object-position: center; background: #fff; border-radius: 10px; }
 .paper-card figcaption, .figure-card figcaption { display: flex; justify-content: space-between; gap: 20px; margin-top: 12px; color: var(--muted); font-size: var(--text-xs); }
 .paper-card figcaption strong, .figure-card figcaption strong { color: var(--ink); }
 .metric-strip { grid-column: 1 / -1; align-self: end; display: grid; grid-template-columns: repeat(4, 1fr); overflow: hidden; margin-top: 18px; background: var(--rust); border-radius: 14px; }
@@ -104,9 +104,9 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--ember); outline
 .physics-card dl div { display: flex; justify-content: space-between; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: var(--text-xs); }
 .physics-card dt { color: var(--muted); }
 .physics-card dd { margin: 0; font-weight: 700; text-align: right; }
-.sensor-band { margin-top: 16px; padding: 18px; display: grid; grid-template-columns: 0.75fr 1.05fr 0.55fr; gap: 26px; align-items: center; box-shadow: none; }
+.sensor-band { margin-top: 16px; padding: 18px; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.9fr) minmax(160px, 0.45fr); gap: 26px; align-items: center; box-shadow: none; }
 .sensor-band figure { margin: 0; padding: 10px; background: #fff; border-radius: 11px; }
-.sensor-band figure img { width: 100%; max-height: 160px; object-fit: contain; }
+.sensor-band figure img { width: 100%; height: auto; max-height: 280px; object-fit: contain; }
 .sensor-band h3 { margin: 6px 0; font-size: var(--text-lg); font-weight: 500; }
 .sensor-band p { margin: 0; color: var(--muted); font-size: var(--text-sm); }
 .sensor-facts { display: grid; gap: 8px; }
@@ -148,8 +148,8 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--ember); outline
 
 .team-layout { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.55fr); gap: 18px; align-items: start; }
 .author-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-.author-grid article { min-height: 188px; overflow: hidden; box-shadow: none; }
-.author-grid img { width: 100%; height: 126px; object-fit: cover; object-position: center 22%; }
+.author-grid article { min-height: 0; overflow: hidden; box-shadow: none; }
+.author-grid img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: contain; object-position: center; background: #f2ede8; }
 .author-grid div { padding: 10px 12px; border-top: 3px solid var(--coral); }
 .author-grid article:nth-child(3n+2) div { border-top-color: var(--teal); }
 .author-grid article:nth-child(3n) div { border-top-color: var(--ember); }
@@ -171,8 +171,6 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--ember); outline
   .panel-heading h2 { font-size: 2.5rem; }
   .overview-copy h1 { font-size: clamp(2.25rem, 4.1vw, 3.85rem); }
   .emblem-showcase img { width: 185px; height: 185px; }
-  .author-grid img { height: 110px; }
-  .author-grid article { min-height: 171px; }
 }
 
 @media (max-width: 980px) {
@@ -196,8 +194,6 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--ember); outline
   .result-switch { overflow-x: auto; max-width: 100%; }
   .result-figure img { max-height: none; }
   .distribution-pair img { max-height: none; }
-  .author-grid img { height: 180px; }
-  .author-grid article { min-height: 242px; }
 }
 
 @media (max-width: 640px) {
@@ -211,13 +207,10 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--ember); outline
   .sensor-band { grid-template-columns: 1fr; }
   .sensor-facts { grid-column: auto; grid-template-columns: 1fr; }
   .author-grid { grid-template-columns: 1fr 1fr; }
-  .author-grid img { height: 145px; }
-  .author-grid article { min-height: 207px; }
 }
 
 @media (max-width: 420px) {
   .author-grid { grid-template-columns: 1fr; }
-  .author-grid img { height: 230px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
