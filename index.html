@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#faf7f2" />
+    <meta name="description" content="HOTSPOT uses on-chip differential temperature sensors to detect localized power anomalies from hardware Trojans on a measured 65-nm CMOS prototype." />
+    <meta property="og:title" content="HOTSPOT — On-chip thermal sensing for hardware Trojan detection" />
+    <meta property="og:description" content="The first experimental demonstration of hardware Trojan detection with embedded differential temperature sensors." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://noisyor.github.io/HOTSPOT/" />
+    <meta property="og:image" content="https://noisyor.github.io/HOTSPOT/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="HOTSPOT: Thermal sensing for hardware Trojan detection" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="HOTSPOT — Thermal sensing for hardware Trojan detection" />
+    <meta name="twitter:description" content="Measured 65-nm CMOS evidence for non-invasive hardware Trojan detection with on-chip differential temperature sensors." />
+    <meta name="twitter:image" content="https://noisyor.github.io/HOTSPOT/assets/og.png" />
+    <title>HOTSPOT — Hardware Trojan Detection with On-Chip Thermal Sensing</title>
+    <link rel="icon" href="assets/hotspot-favicon.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#tab-content">Skip to content</a>
+    <div class="app-shell">
+      <header class="site-header">
+        <a class="brand" href="#overview" data-tab-link="overview" aria-label="HOTSPOT overview">
+          <img src="assets/hotspot-emblem.png" alt="" width="52" height="52" />
+          <span><strong>HOTSPOT</strong><small>Thermal hardware security</small></span>
+        </a>
+
+        <nav class="site-tabs" role="tablist" aria-label="Project sections">
+          <button type="button" role="tab" id="tab-overview" aria-controls="overview" aria-selected="true" data-tab="overview">Overview</button>
+          <button type="button" role="tab" id="tab-approach" aria-controls="approach" aria-selected="false" data-tab="approach" tabindex="-1">Approach</button>
+          <button type="button" role="tab" id="tab-evidence" aria-controls="evidence" aria-selected="false" data-tab="evidence" tabindex="-1">Evidence</button>
+          <button type="button" role="tab" id="tab-scope" aria-controls="scope" aria-selected="false" data-tab="scope" tabindex="-1">Scope</button>
+          <button type="button" role="tab" id="tab-team" aria-controls="team" aria-selected="false" data-tab="team" tabindex="-1">Team</button>
+        </nav>
+
+        <span class="venue-pill">TCAS-I · Accepted</span>
+      </header>
+
+      <main id="tab-content" class="tab-content">
+        <section class="tab-panel overview-panel" id="overview" role="tabpanel" aria-labelledby="tab-overview" tabindex="0">
+          <div class="overview-copy">
+            <p class="kicker">IEEE TCAS-I · Accepted paper</p>
+            <h1><span>HOTSPOT</span><br />Temperature sensing for on-chip Trojan detection.</h1>
+            <p class="lead">The circuit produces heat. The sensor captures the gradient. HOTSPOT learns when the measured thermal profile no longer looks trusted.</p>
+            <p class="paper-name">Hardware Observation via Temperature Sensing for Protection against On-Chip Trojans</p>
+            <p class="authors">Saion K. Roy, Thomas Gourousis, Mengting Yan, Junyi Yang, Ruyi Ding, Francesco Restuccia, Aatmesh Shrivastava, Marvin Onabajo, and Yunsi Fei</p>
+            <div class="actions">
+              <button class="primary-action" type="button" data-tab-link="evidence">Explore the evidence</button>
+              <button class="secondary-action" type="button" data-tab-link="approach">See how it works</button>
+            </div>
+          </div>
+
+          <div class="overview-visual">
+            <div class="emblem-showcase">
+              <img src="assets/hotspot-emblem.png" alt="HOTSPOT emblem showing a three-by-three on-chip sensing grid with one localized hotspot and nearby thermal sensors" width="640" height="640" />
+              <div><strong>Security from an existing sensor</strong><span>Nine sensing BJTs observe localized activity through a shared differential readout.</span></div>
+            </div>
+            <figure class="paper-card">
+              <img src="assets/measurement-setup.png" alt="Laboratory setup and chip micrograph showing nine BJT sensing devices around the hardware Trojan" width="1509" height="742" />
+              <figcaption><strong>Measured 65-nm CMOS prototype</strong><span>Thermal sensor array · CUT · controlled HT structure</span></figcaption>
+            </figure>
+          </div>
+
+          <div class="metric-strip" aria-label="Evaluation highlights">
+            <div><strong>95%</strong><span>Peak detection accuracy</span></div>
+            <div><strong>6.65×</strong><span>Higher SNR at 1.95 µW</span></div>
+            <div><strong>9 sensors</strong><span>One shared readout core</span></div>
+            <div><strong>65 nm</strong><span>Measured CMOS prototype</span></div>
+          </div>
+        </section>
+
+        <section class="tab-panel approach-panel" id="approach" role="tabpanel" aria-labelledby="tab-approach" tabindex="0" hidden>
+          <header class="panel-heading">
+            <div><p class="kicker">The approach</p><h2>From localized power to an anomaly decision.</h2></div>
+            <p>HOTSPOT connects electrothermal coupling, differential sensing, and one-class learning without loading the circuit under test.</p>
+          </header>
+
+          <div class="approach-layout">
+            <div class="method-steps">
+              <article><span>01</span><div><h3>Couple</h3><p>Active circuit power spreads through the shared silicon substrate as a local temperature gradient.</p></div></article>
+              <article><span>02</span><div><h3>Sense</h3><p>Nine BJT devices are time-multiplexed into one calibrated differential sensor core.</p></div></article>
+              <article><span>03</span><div><h3>Detect</h3><p>An autoencoder trained only on trusted CUT waveforms flags high reconstruction loss.</p></div></article>
+            </div>
+
+            <figure class="figure-card threat-figure">
+              <img src="assets/threat-model.png" alt="Hardware Trojan insertion into an integrated circuit equipped with an on-chip differential temperature sensor" width="1967" height="452" />
+              <figcaption><strong>Threat model</strong><span>Fabrication- or design-stage changes become visible when they dissipate local power.</span></figcaption>
+            </figure>
+
+            <aside class="physics-card">
+              <span class="control-label">Detection signal-to-noise ratio <math class="inline-equation" aria-label="S N R sub d"><mo>(</mo><msub><mi mathvariant="normal">SNR</mi><mi>d</mi></msub><mo>)</mo></math></span>
+              <div class="score-equation">
+                <math display="block" aria-label="Detection signal to noise ratio equals the absolute difference between total and circuit under test means divided by pooled standard deviation">
+                  <mrow>
+                    <msub><mi mathvariant="normal">SNR</mi><mi>d</mi></msub>
+                    <mo>=</mo>
+                    <mfrac>
+                      <mrow>
+                        <mo>|</mo>
+                        <msub><mi>μ</mi><mtext>TOTAL</mtext></msub>
+                        <mo>−</mo>
+                        <msub><mi>μ</mi><mtext>CUT</mtext></msub>
+                        <mo>|</mo>
+                      </mrow>
+                      <msqrt>
+                        <mfrac>
+                          <mrow>
+                            <msubsup><mi>σ</mi><mtext>CUT</mtext><mn>2</mn></msubsup>
+                            <mo>+</mo>
+                            <msubsup><mi>σ</mi><mtext>TOTAL</mtext><mn>2</mn></msubsup>
+                          </mrow>
+                          <mn>2</mn>
+                        </mfrac>
+                      </msqrt>
+                    </mfrac>
+                  </mrow>
+                </math>
+              </div>
+              <p>Larger mean shifts and lower pooled variability make CUT and CUT + HT measurements easier to separate.</p>
+              <dl><div><dt>Input</dt><dd>1,499 samples</dd></div><div><dt>Training</dt><dd>Trusted CUT only</dd></div><div><dt>Decision</dt><dd>Loss &gt; threshold</dd></div></dl>
+            </aside>
+          </div>
+
+          <div class="sensor-band">
+            <figure><img src="assets/sensor-architecture.png" alt="BJT-based differential temperature sensor architecture with shared front end and calibration" width="872" height="436" /></figure>
+            <div><span class="control-label">Shared sensor core</span><h3>Localized sensing without a direct CUT connection.</h3><p>Temperature changes modulate the BJT emitter currents. The transimpedance and instrumentation amplifiers produce a differential output, while calibration suppresses DC mismatch before each acquisition.</p></div>
+            <div class="sensor-facts"><p><strong>9 → 1</strong><span>Multiplexed sensing</span></p><p><strong>0.75 mm²</strong><span>Total prototype area</span></p></div>
+          </div>
+        </section>
+
+        <section class="tab-panel evidence-panel" id="evidence" role="tabpanel" aria-labelledby="tab-evidence" tabindex="0" hidden>
+          <header class="panel-heading evidence-heading">
+            <div><p class="kicker">Measured evidence</p><h2>Three views of the same thermal advantage.</h2></div>
+            <div class="result-switch" role="group" aria-label="Choose evidence view">
+              <button type="button" data-evidence="power" aria-pressed="true">Power sweep</button>
+              <button type="button" data-evidence="spatial" aria-pressed="false">Spatial map</button>
+              <button type="button" data-evidence="statistics" aria-pressed="false">Signal statistics</button>
+            </div>
+          </header>
+
+          <div class="evidence-view" data-evidence-view="power">
+            <figure class="figure-card result-figure">
+              <img src="assets/accuracy-tradeoff.png" alt="Detection accuracy for temperature Sensor 4 and supply-current measurements across hardware Trojan frequencies" width="840" height="840" />
+              <figcaption><strong>Accuracy versus controlled Trojan activity</strong><span>50 kHz–8 MHz · 12 nW–1.95 µW</span></figcaption>
+            </figure>
+            <div class="result-summary">
+              <article><span>Temperature channel</span><strong>61–95%</strong><p>Detection accuracy across the sweep</p></article>
+              <article><span>Supply current</span><strong>70% max</strong><p>Plateaus at and above 4 MHz</p></article>
+              <article><span>Peak advantage</span><strong>25 points</strong><p>95% versus 70% accuracy</p></article>
+              <p class="result-note"><strong>Deployment note:</strong> clock frequency is swept only to control Trojan power during characterization. In-field detection does not require clock control.</p>
+            </div>
+          </div>
+
+          <div class="evidence-view" data-evidence-view="spatial" hidden>
+            <figure class="figure-card result-figure">
+              <img src="assets/spatial-accuracy.png" alt="Three-by-three map of detection accuracy for the nine sensing positions" width="857" height="691" />
+              <figcaption><strong>Per-sensor accuracy at 2 MHz</strong><span>Physical 3 × 3 sensing array</span></figcaption>
+            </figure>
+            <div class="result-summary">
+              <article><span>Best location</span><strong>Sensor 2 · 88%</strong><p>Strongest measured thermal coupling</p></article>
+              <article><span>Representative sweep</span><strong>Sensor 4 · 77%</strong><p>Used for the full power comparison</p></article>
+              <article><span>Measured range</span><strong>59–88%</strong><p>Across all nine sensor positions</p></article>
+              <p class="result-note"><strong>Interpretation:</strong> distance alone is insufficient. Local power, routing, vias, materials, and thermal resistivity also shape sensitivity.</p>
+            </div>
+          </div>
+
+          <div class="evidence-view statistics-view" data-evidence-view="statistics" hidden>
+            <div class="distribution-pair">
+              <figure class="figure-card"><img src="assets/thermal-separation.png" alt="Temperature-sensor distributions showing separation between CUT-only and CUT plus hardware Trojan measurements" width="853" height="834" /><figcaption><strong>Temperature output</strong><span>SNR<sub>d</sub> = 4.79</span></figcaption></figure>
+              <figure class="figure-card"><img src="assets/power-separation.png" alt="Supply-current distributions showing overlap between CUT-only and CUT plus hardware Trojan measurements" width="853" height="834" /><figcaption><strong>Supply current</strong><span>SNR<sub>d</sub> = 0.72</span></figcaption></figure>
+            </div>
+            <div class="result-summary">
+              <article><span>Thermal mean shift</span><strong>2.46×</strong><p>Relative to CUT-only measurement</p></article>
+              <article><span>Power mean shift</span><strong>1.03×</strong><p>Substantial distribution overlap remains</p></article>
+              <article><span>SNR ratio</span><strong>6.65×</strong><p>At 1.95 µW Trojan power</p></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="tab-panel scope-panel" id="scope" role="tabpanel" aria-labelledby="tab-scope" tabindex="0" hidden>
+          <header class="panel-heading">
+            <div><p class="kicker">Evidence boundary</p><h2>What the prototype establishes—and what remains open.</h2></div>
+            <p>The site preserves the paper’s trust assumptions, test-structure boundary, variation study, and limited-data uncertainty.</p>
+          </header>
+
+          <div class="scope-grid">
+            <article><span>Demonstrated</span><h3>Power-dissipating Trojan behavior</h3><p>HOTSPOT is most effective when active behavior produces a localized thermal change above the measured detection floor.</p></article>
+            <article><span>Test structure</span><h3>A controlled inverter, not a complete Trojan</h3><p>The prototype sweeps a minimum-sized inverter with a floating output. It does not implement full trigger and payload logic.</p></article>
+            <article><span>Trust assumption</span><h3>Trusted reference chips are required</h3><p>The one-class detector learns CUT-only behavior. A compromised golden reference invalidates the underlying assumption.</p></article>
+            <article><span>Variation study</span><h3>Controlled corner stress after characterization</h3><p>Supply-voltage stress emulates corner-induced power shifts. Stored scaling and offset vectors normalize incoming measurements.</p></article>
+          </div>
+
+          <div class="validation-strip" aria-label="Robustness and uncertainty checks">
+            <div><strong>75.1–99.9%</strong><span>Exact 95% interval at 8 MHz</span></div>
+            <div><strong>79% vs. 77%</strong><span>Extra Sensor 4 acquisition vs. original</span></div>
+            <div><strong>72–79%</strong><span>Accuracy under normalized voltage stress</span></div>
+          </div>
+          <p class="scope-note"><strong>Next step:</strong> broader evaluation with dormant and active functional Trojan benchmarks. The current results should not be read as universal detection across all Trojan types or power levels.</p>
+        </section>
+
+        <section class="tab-panel team-panel" id="team" role="tabpanel" aria-labelledby="tab-team" tabindex="0" hidden>
+          <header class="panel-heading">
+            <div><p class="kicker">Research team</p><h2>Circuits, sensing, and hardware security.</h2></div>
+            <p>Northeastern University · Analog Devices · Louisiana State University</p>
+          </header>
+
+          <div class="team-layout">
+            <div class="author-grid">
+              <article><img src="assets/authors/saion-roy.jpg" alt="Saion K. Roy" /><div><h3>Saion K. Roy</h3><p>Northeastern University</p></div></article>
+              <article><img src="assets/authors/thomas-gourousis.jpg" alt="Thomas Gourousis" /><div><h3>Thomas Gourousis</h3><p>Northeastern University</p></div></article>
+              <article><img src="assets/authors/mengting-yan.png" alt="Mengting Yan" /><div><h3>Mengting Yan</h3><p>Analog Devices</p></div></article>
+              <article><img src="assets/authors/junyi-yang.jpg" alt="Junyi Yang" /><div><h3>Junyi Yang</h3><p>Northeastern University</p></div></article>
+              <article><img src="assets/authors/ruyi-ding.png" alt="Ruyi Ding" /><div><h3>Ruyi Ding</h3><p>Louisiana State University</p></div></article>
+              <article><img src="assets/authors/francesco-restuccia.jpg" alt="Francesco Restuccia" /><div><h3>Francesco Restuccia</h3><p>Northeastern University</p></div></article>
+              <article><img src="assets/authors/aatmesh-shrivastava.jpg" alt="Aatmesh Shrivastava" /><div><h3>Aatmesh Shrivastava</h3><p>Northeastern University</p></div></article>
+              <article><img src="assets/authors/marvin-onabajo.jpg" alt="Marvin Onabajo" /><div><h3>Marvin Onabajo</h3><p>Northeastern University</p></div></article>
+              <article><img src="assets/authors/yunsi-fei.jpg" alt="Yunsi Fei" /><div><h3>Yunsi Fei</h3><p>Northeastern University · Corresponding author</p></div></article>
+            </div>
+
+            <aside class="paper-meta">
+              <p class="kicker">Paper</p>
+              <img src="assets/hotspot-emblem.png" alt="" width="640" height="640" />
+              <h3>HOTSPOT: Hardware Observation via Temperature Sensing for Protection against On-Chip Trojans</h3>
+              <p class="venue">IEEE Transactions on Circuits and Systems I: Regular Papers · Accepted</p>
+              <p>The public paper and DOI links will be added when the final record becomes available.</p>
+              <div class="support-note"><strong>Acknowledgment</strong><span>Supported by NSF grant 2146754 and in part through the RINGS program.</span></div>
+            </aside>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
