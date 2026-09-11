@@ -1,0 +1,116 @@
+{
+  "input_sha256": {
+    "spatial": "59136150f2ea53b67dac554579bdccd3b5966d0e643c45eb0aad99f5f480af29",
+    "supply_current": "aebaffa831728774e7efab65682d72ce48f0746c1fee212e0967b669e8ffd882",
+    "temperature": "375b45fb2d4d38e2c30cd2eab177b95b23c01eeb655bb51b3d3aa6fd67341d8e"
+  },
+  "paper": {
+    "doi": "10.1109/TCSI.2026.3729170",
+    "title": "HOTSPOT: Hardware Observation via Temperature Sensing for Protection Against On-Chip Trojans"
+  },
+  "spatial_accuracy_percent": {
+    "0": 63.0,
+    "1": 78.0,
+    "2": 88.0,
+    "3": 59.0,
+    "4": 77.0,
+    "5": 71.0,
+    "6": 78.0,
+    "7": 63.0,
+    "8": 77.0
+  },
+  "supply_current_accuracy": [
+    {
+      "accuracy_percent": 20.0,
+      "frequency_mhz": 0.05,
+      "variant": "50kHz"
+    },
+    {
+      "accuracy_percent": 20.0,
+      "frequency_mhz": 0.15,
+      "variant": "150kHz"
+    },
+    {
+      "accuracy_percent": 20.0,
+      "frequency_mhz": 0.25,
+      "variant": "250kHz"
+    },
+    {
+      "accuracy_percent": 45.0,
+      "frequency_mhz": 0.5,
+      "variant": "500kHz"
+    },
+    {
+      "accuracy_percent": 65.0,
+      "frequency_mhz": 1.0,
+      "variant": "1MHz"
+    },
+    {
+      "accuracy_percent": 70.0,
+      "frequency_mhz": 2.0,
+      "variant": "2MHz"
+    },
+    {
+      "accuracy_percent": 70.0,
+      "frequency_mhz": 3.2,
+      "variant": "3.2MHz"
+    },
+    {
+      "accuracy_percent": 70.0,
+      "frequency_mhz": 4.0,
+      "variant": "4MHz"
+    },
+    {
+      "accuracy_percent": 70.0,
+      "frequency_mhz": 8.0,
+      "variant": "8MHz"
+    }
+  ],
+  "temperature_accuracy": [
+    {
+      "accuracy_percent": 61.00000000000001,
+      "frequency_mhz": 0.05,
+      "variant": "50kHz"
+    },
+    {
+      "accuracy_percent": 72.0,
+      "frequency_mhz": 0.15,
+      "variant": "150kHz"
+    },
+    {
+      "accuracy_percent": 65.99999999999999,
+      "frequency_mhz": 0.25,
+      "variant": "250kHz"
+    },
+    {
+      "accuracy_percent": 73.0,
+      "frequency_mhz": 0.5,
+      "variant": "500kHz"
+    },
+    {
+      "accuracy_percent": 76.99999999999999,
+      "frequency_mhz": 1.0,
+      "variant": "1MHz"
+    },
+    {
+      "accuracy_percent": 78.0,
+      "frequency_mhz": 2.0,
+      "variant": "2MHz"
+    },
+    {
+      "accuracy_percent": 90.0,
+      "frequency_mhz": 3.2,
+      "variant": "3.2MHz"
+    },
+    {
+      "accuracy_percent": 95.0,
+      "frequency_mhz": 4.0,
+      "variant": "4MHz"
+    },
+    {
+      "accuracy_percent": 95.0,
+      "frequency_mhz": 8.0,
+      "variant": "8MHz"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the HOTSPOT paper."
+title: "HOTSPOT reproducibility artifact"
+type: software
+version: 1.0.0
+date-released: 2026-09-11
+url: "https://github.com/noisyor/HOTSPOT"
+authors:
+  - family-names: Roy
+    given-names: Saion K.
+    orcid: "https://orcid.org/0000-0001-7893-7168"
+  - family-names: Gourousis
+    given-names: Thomas
+  - family-names: Yan
+    given-names: Mengting
+  - family-names: Yang
+    given-names: Junyi
+  - family-names: Ding
+    given-names: Ruyi
+  - family-names: Restuccia
+    given-names: Francesco
+  - family-names: Shrivastava
+    given-names: Aatmesh
+  - family-names: Onabajo
+    given-names: Marvin
+  - family-names: Fei
+    given-names: Yunsi
+preferred-citation:
+  type: article
+  title: "HOTSPOT: Hardware Observation via Temperature Sensing for Protection Against On-Chip Trojans"
+  doi: "10.1109/TCSI.2026.3729170"
+  journal: "IEEE Transactions on Circuits and Systems I: Regular Papers"
+  year: 2026
+  authors:
+    - family-names: Roy
+      given-names: Saion K.
+    - family-names: Gourousis
+      given-names: Thomas
+    - family-names: Yan
+      given-names: Mengting
+    - family-names: Yang
+      given-names: Junyi
+    - family-names: Ding
+      given-names: Ruyi
+    - family-names: Restuccia
+      given-names: Francesco
+    - family-names: Shrivastava
+      given-names: Aatmesh
+    - family-names: Onabajo
+      given-names: Marvin
+    - family-names: Fei
+      given-names: Yunsi
