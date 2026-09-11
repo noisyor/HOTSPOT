@@ -69,7 +69,7 @@
 
           <div class="metric-strip" aria-label="Evaluation highlights">
             <div><strong>95%</strong><span>Peak detection accuracy</span></div>
-            <div><strong>6.65×</strong><span>Higher SNR at 1.95 µW</span></div>
+            <div><strong>6.65×</strong><span>Higher SNR than supply-current sensing at 1.95 µW</span></div>
             <div><strong>9 sensors</strong><span>One shared readout core</span></div>
             <div><strong>65 nm</strong><span>Measured CMOS prototype</span></div>
           </div>
@@ -186,14 +186,14 @@
         <section class="tab-panel scope-panel" id="scope" role="tabpanel" aria-labelledby="tab-scope" tabindex="0" hidden>
           <header class="panel-heading">
             <div><p class="kicker">Evidence boundary</p><h2>What the prototype establishes—and what remains open.</h2></div>
-            <p>The site preserves the paper’s trust assumptions, test-structure boundary, variation study, and limited-data uncertainty.</p>
+            <p>The site preserves the paper’s trust assumptions, test-structure boundary, process-corner stress test, and limited-data uncertainty.</p>
           </header>
 
           <div class="scope-grid">
             <article><span>Demonstrated</span><h3>Power-dissipating Trojan behavior</h3><p>HOTSPOT is most effective when active behavior produces a localized thermal change above the measured detection floor.</p></article>
-            <article><span>Test structure</span><h3>A controlled inverter, not a complete Trojan</h3><p>The prototype sweeps a minimum-sized inverter with a floating output. It does not implement full trigger and payload logic.</p></article>
+            <article><span>Test structure</span><h3>A controlled active-Trojan test structure</h3><p>The prototype uses a minimum-sized digital inverter with a floating output to generate reproducible localized power dissipation representative of active Trojan behavior across controlled activity levels.</p></article>
             <article><span>Trust assumption</span><h3>Trusted reference chips are required</h3><p>The one-class detector learns CUT-only behavior. A compromised golden reference invalidates the underlying assumption.</p></article>
-            <article><span>Variation study</span><h3>Controlled corner stress after characterization</h3><p>Supply-voltage stress emulates corner-induced power shifts. Stored scaling and offset vectors normalize incoming measurements.</p></article>
+            <article><span>Process corner stress test</span><h3>Controlled corner stress after characterization</h3><p>Supply-voltage stress emulates corner-induced power shifts. Stored scaling and offset vectors normalize incoming measurements.</p></article>
           </div>
 
           <div class="validation-strip" aria-label="Robustness and uncertainty checks">
